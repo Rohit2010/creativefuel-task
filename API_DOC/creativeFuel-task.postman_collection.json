@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "f6fe991f-9937-4a4e-a193-311e1a1be3bc",
+		"name": "creativeFuel-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11223463"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "rohit deshmukh",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "rohitdeshmukh2409@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/rohit/OneDrive/Pictures/Screenshots/image.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}:{{port}}/user/all",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rohitdeshmukh2409@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}:{{port}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTask",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDQ1MTFhYTkxODY2MGE3NDllMzNlNWMiLCJpYXQiOjE2ODIyNTU2MTAsImV4cCI6MTY4MjI5ODgxMH0.r_WrBdz3UFuJ_RPNm6YCxla6A_bF7qpeDrpEeTIyHII",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "second task",
+							"type": "text"
+						},
+						{
+							"key": "dueDate",
+							"value": "25-04-2023",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": "/C:/Users/rohit/Downloads/highwayBite_database_design.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}:{{port}}/task/create",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDQ1MTFhYTkxODY2MGE3NDllMzNlNWMiLCJpYXQiOjE2ODIyNTU2MTAsImV4cCI6MTY4MjI5ODgxMH0.r_WrBdz3UFuJ_RPNm6YCxla6A_bF7qpeDrpEeTIyHII",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}:{{port}}/task/delete/6445490692c4a74651ffca2f",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"task",
+						"delete",
+						"6445490692c4a74651ffca2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/user/:id",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/user/get/all",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"user",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get task of loggedIn user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDQ1MTFhYTkxODY2MGE3NDllMzNlNWMiLCJpYXQiOjE2ODIyNTU2MTAsImV4cCI6MTY4MjI5ODgxMH0.r_WrBdz3UFuJ_RPNm6YCxla6A_bF7qpeDrpEeTIyHII",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "third taskkkkkk",
+							"type": "text"
+						},
+						{
+							"key": "dueDate",
+							"value": "26-04-2023",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": "/C:/Users/rohit/Downloads/Resume.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}:{{port}}/task/update/64454b1cb0a9df6d4b57a879",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"task",
+						"update",
+						"64454b1cb0a9df6d4b57a879"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
